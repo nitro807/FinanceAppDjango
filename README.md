@@ -1,24 +1,38 @@
-# FinanceAppDjango
+# FinanceAppDjango  
 
-Простое приложение для управления финансами.  
-Позволяет добавлять транзакции, управлять категориями и отслеживать расходы.
+## Описание  
+FinanceAppDjango — это приложение для управления личными финансами. Оно позволяет пользователям добавлять категории, записывать транзакции и анализировать свои расходы.  
 
-## Установка
+## Установка  
 
-1. Склонируйте репозиторий:
-   ```bash
-   git clone https://github.com/nitro807/FinanceAppDjango.git
+### 1. Клонирование репозитория  
+```bash
+git clone https://github.com/USERNAME/FinanceAppDjango.git
+cd FinanceAppDjango
 
-2. Установите зависимости:
-   ```bash
-   pip install -r requirements.txt
+### 2. Настройка виртуального окружения
+python -m venv venv
+source venv/Scripts/activate  # Для Windows
+# или
+source venv/bin/activate  # Для Linux/Mac
 
-3. Выполните миграции:
-   ```bash
-   python manage.py migrate
+### 3. Установка зависимостей
+pip install -r requirements.txt
 
-4. Запустите сервер разработки:
-   ```bash
-   python manage.py runserver
+### 4. Настройка .env файла
+Создайте файл .env в корневой директории и укажите:
 
-Автор: [Алексей](https://github.com/nitro807)
+SECRET_KEY=your_secret_key
+DEBUG=True
+DATABASE_URL=postgres://user:password@localhost:5432/your_database_name
+EMAIL_HOST_USER=your_email@example.com
+EMAIL_HOST_PASSWORD=your_email_password
+
+### 5. Применение миграций
+python manage.py migrate
+
+### 6. Запуск сервера
+python manage.py runserver
+
+## Лицензия
+MIT License
