@@ -9,6 +9,7 @@ FinanceAppDjango — это приложение для управления л�
 ```bash
 git clone https://github.com/USERNAME/FinanceAppDjango.git
 cd FinanceAppDjango
+'''
 
 ### 2. Настройка виртуального окружения
 python -m venv venv
