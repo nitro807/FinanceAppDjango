@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Транзакции</h2>
+  <a href="{% url 'add_transaction' %}">Добавить транзакцию</a>
+
+  <div>
+    <canvas id="transactionChart"></canvas>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    var ctx = document.getElementById('transactionChart').getContext('2d');
+    var chart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Доходы', 'Расходы'],
+        datasets: [{
+          label: 'Сумма',
+          data: [{{ income_total }}, {{ expense_total }}],  // Используем данные из представления
+          backgroundColor: ['green', 'red']
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+{% endblock %}

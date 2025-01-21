@@ -1,0 +1,36 @@
+<!-- templates/base.html -->
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Финансовый трекер для учета личных доходов и расходов">
+    <meta name="keywords" content="финансы, учет расходов, личный бюджет, финансовый трекер, управление деньгами">
+    <title>{% block title %}Мой сайт{% endblock title %}</title>
+</head>
+<body>
+    <header>
+        <h1>Добро пожаловать в Финансовый трекер!</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Главная</a></li>
+                <li><a href="{% url 'transaction_list' %}">Транзакции</a></li>
+                <nav>
+                    <a href="{% url 'category_list' %}">Категории</a>
+                </nav>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        {% block content %}
+        <!-- Основной контент будет вставляться сюда -->
+        {% endblock content %}
+    </main>
+
+    <footer>
+        <p>© 2025 Мой сайт</p>
+    </footer>
+</body>
+</html>
